@@ -9,4 +9,5 @@ resource "aws_subnet" "subnet" {
   cidr_block        = each.value.subnet_cidr
   availability_zone = each.value.availability_zone
   tags              = each.value.tags
+  map_public_ip_on_launch = each.value.map_public_ip_on_launch
 }
