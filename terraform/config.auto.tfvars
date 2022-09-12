@@ -52,7 +52,7 @@ subnets = {
 }
 
 internet_gateways = {
-  main_igw = {
+  main = {
     name = "main"
     vpc  = "main"
     tags = {
@@ -106,3 +106,29 @@ route_table_associations = [
   "public_1",
   "public_2",
 ]
+
+internet_gateway_routes = {
+  public_1 = {
+    route_table = "public_1"
+    cidr = "0.0.0.0/0"
+    gateway = "main"
+  },
+  public_2 = {
+    route_table = "public_2"
+    cidr = "0.0.0.0/0"
+    gateway = "main"
+  }
+}
+
+nat_gateway_routes = {
+  private_1 = {
+    route_table = "private_1"
+    cidr = "0.0.0.0/0"
+    gateway = "main"
+  },
+  private_2 = {
+    route_table = "private_2"
+    cidr = "0.0.0.0/0"
+    gateway = "main"
+  }
+}
